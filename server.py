@@ -4,11 +4,13 @@ import time
 app = FastAPI()
 
 
-def fibonacci(n: int) -> int:
-    # This function computes the nth Fibonacci number using a naive recursive approach
+def fibonacci_iterative(n: int) -> int:
     if n <= 1:
         return n
-    return fibonacci(n - 1) + fibonacci(n - 2)
+    a, b = 0, 1
+    for _ in range(2, n + 1):
+        a, b = b, a + b
+    return b
 
 @app.get("/compute")
 async def compute(number: int):
