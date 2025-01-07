@@ -4,7 +4,7 @@ import time
 app = FastAPI()
 
 
-def fibonacci_iterative(n: int) -> int:
+def fibonacci(n: int) -> int:
     if n <= 1:
         return n
     a, b = 0, 1
